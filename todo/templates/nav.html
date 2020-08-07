@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+    <!-- Custom styles for this template -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          </button>
+                <a class="navbar-brand" href="#">Todo App</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+
+
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'list' %}">Home</a></li>
+                    <li><a href="">Hello {{user.first_name}}</a></li>
+                    <li><a href="{% url 'logout'  %}">logout</a></li>
+                    <li><a href="{% url 'create'  %}">Add Todo</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    {% else %}
+                    <li class="active"><a href="{% url 'homepage' %}">Home</a></li>
+                    <li><a href="{% url 'home'  %}">Sign up</a></li>
+                    <li><a href="{% url 'login'  %}">login</a></li>
+                    <li><a href="{% url 'joke' %}">Pyjokes</a></li>
+                    <li><a href="https://github.com/ali48293?tab=repositories">Source Code</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+
+                    {% endif %}
+                </ul>
+            </div>
+
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    {% block content %} {% endblock %}
+
+
+
+</body>
+
+</html>

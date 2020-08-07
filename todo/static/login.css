@@ -1,0 +1,32 @@
+.all {
+    background: #333;
+    width: 100%;
+    height: 100%;
+    border-radius: 19px;
+}
+
+.input {
+    padding-left: 30%;
+}
+
+input {
+    padding: 10px;
+    display: block;
+    width: 40%;
+    background: black;
+    color: white;
+    border: 5px;
+    border-radius: 10px;
+    transition: 0.4s;
+    box-sizing: border-box;
+}
+
+input:hover {
+    background: white;
+    color: black;
+    border-radius: 10px;
+}
+
+button {
+    padding-top: 3%;
+}
